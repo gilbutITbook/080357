@@ -27,7 +27,7 @@
 - 구글 코랩(Google Colab): https://nadocoding.tistory.com/105
 
 다음 링크로 가면 VSCode를 컴퓨터에 설치하지 않고 웹에서 사용할 수도 있습니다.
-- 웹에서 VSCode 사용하기: https://vscode.dev/
+- 웹에서 VSCode 사용하기: https://vscode.dev
 
 
 
