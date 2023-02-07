@@ -14,9 +14,15 @@
 
 ## macOS에서 개발 환경 설정하기
 
+<<<<<<< HEAD
 프로그램마다 새로운 버전이 나오면 환경 설정 방법이 조금씩 달라질 수 있습니다. 또한, 사용하는 PC의 운영체제가 macOS라면 개발 환경 설정이 Windows와 조금 다릅니다. 이럴 땐 다음 링크에서 최신 개발 환경 설정 방법을 확인해 주세요.
 - Windows: https://nadocoding.tistory.com/4
 - macOS: https://nadocoding.tistory.com/101
+=======
+프로그램마다 새로운 버전이 나오면 환경 설정 방법이 조금씩 달라질 수 있습니다.
+또한, 사용하는 PC의 운영체제가 macOS라면 개발 환경 설정이 Windows와 조금 다릅니다. 이럴 땐 다음 링크에서 최신 개발 환경 설정 방법을 확인해 주세요.
+- https://nadocoding.tistory.com/4
+>>>>>>> 37154bbe110f9075e735fb6c15bd0884dd3fb861
 
 
 ## 파이썬 에디터
@@ -26,7 +32,11 @@
 - 주피터 노트북(Jupyter Notebook): https://nadocoding.tistory.com/104
 - 구글 코랩(Google Colab): https://nadocoding.tistory.com/105
 
+<<<<<<< HEAD
  다음 링크로 가면 VSCode를 컴퓨터에 설치하지 않고 웹에서 사용할 수도 있습니다.
+=======
+다음 링크로 가면 VSCode를 컴퓨터에 설치하지 않고 웹에서 사용할 수도 있습니다.
+>>>>>>> 37154bbe110f9075e735fb6c15bd0884dd3fb861
 - 웹에서 VSCode 사용하기: https://vscode.dev
 
 
