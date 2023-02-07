@@ -53,11 +53,11 @@ print("총 가격은 " + str(total) + "원입니다.")
 #ch7
 
 def get_air_quality(fine_dust):
-    if 0 <= fine_dust < 30:
+    if 0 <= fine_dust <= 30:
         return "좋음"
-    elif fine_dust < 80:
+    elif fine_dust <= 80:
         return "보통"
-    elif fine_dust < 150:
+    elif fine_dust <= 150:
         return "나쁨"
     else:
         return "매우 나쁨"
@@ -105,12 +105,12 @@ for i in range(6):
 
 #ch10
 
-def save_battery(levels):
+def save_battery(level):
     try:
-        print(f"배터리 잔량 : {levels}%") # 배터리 잔량 표시
-        if levels > 30:
+        print(f"배터리 잔량 : {level}%") # 배터리 잔량 표시
+        if level > 30:
             print("일반 모드로 사용합니다.")
-        elif levels > 5:
+        elif level > 5:
             print("절전 모드로 사용합니다.")
         else:
             raise Exception("배터리가 부족해 스마트폰을 종료합니다.") # 오류 발생

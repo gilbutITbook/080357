@@ -120,7 +120,7 @@ customer = "토르" # 손님 닉네임
 index = 5 # 초깃값, 부르는 횟수 최대 5번
 
 while index >= 1: # 부르는 횟수가 1 이상일 때만 실행
-    print("{}님, 커피가 준비됐습니다.".format(customer))
+    print("{} 님, 커피가 준비됐습니다.".format(customer))
     index -= 1 # 횟수 1회 차감
     print("{}번 남았어요.".format(index))
     if index == 0: # 5번 모두 불렀다면

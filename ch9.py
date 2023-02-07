@@ -14,7 +14,7 @@ tank_hp = 150
 tank_damage = 35
 
 print("{} 유닛을 생성했습니다.".format(tank_name))
-print("체력 {0}, 공격력 {1}\n". format(tank_hp, tank_damage))
+print("체력 {0}, 공격력 {1}\n".format(tank_hp, tank_damage))
 
 # 새로 탱크2 추가
 tank2_name = "탱크"
@@ -22,15 +22,15 @@ tank2_hp = 150
 tank2_damage = 35
 
 print("{} 유닛을 생성했습니다.".format(tank2_name))
-print("체력 {0}, 공격력 {1}\n". format(tank2_hp, tank2_damage))
+print("체력 {0}, 공격력 {1}\n".format(tank2_hp, tank2_damage))
 
 # 공격 함수
 def attack(name, location, damage):
     print("{0} : {1} 방향 적군을 공격합니다. [공격력 {2}]".format(name, location, damage))
 
-attack(name, "1시" , damage) # 보병 공격 명령
-attack(tank_name, "1시" , tank_damage) # 탱크 공격 명령
-attack(tank2_name, "1시" , tank2_damage) # 탱크2 공격 명령
+attack(name, "1시", damage) # 보병 공격 명령
+attack(tank_name, "1시", tank_damage) # 탱크 공격 명령
+attack(tank2_name, "1시", tank2_damage) # 탱크2 공격 명령
 
 
 #9.2
@@ -243,7 +243,7 @@ class FlyableAttackUnit(AttackUnit, Flyable):
         AttackUnit.__init__(self, name, hp, damage, 0) # 지상 이동 속도 0
         Flyable.__init__(self, flying_speed) # 비행 속도
 
-    def move(self, location): # Unit 클래스의 move() 메서드를 새로 정의(오버라이딩)
+    def move(self, location): # Unit 클래스의 move() 메서드를 오버라이딩
         print("[공중 유닛 이동]")
         self.fly(self.name, location)
 
@@ -265,7 +265,7 @@ class BuildingUnit(Unit):
     def __init__(self, name, hp, location):
         pass
 
-# 보급고 : 건물 유닛, 1개 건물 유닛 = 8유닛
+# 보급고: 건물 유닛, 1개 건물 유닛 = 8유닛
 supply_depot = BuildingUnit("보급고", 500, "7시") # 체력 500, 생성 위치 7시
 
 def game_start():
@@ -302,7 +302,7 @@ class Unit:
     def move(self, location):
         # print("[지상 유닛 이동]") # 출력문 삭제
         print("{0} : {1} 방향으로 이동합니다. [속도 {2}]" \
-        .format(self.name, location, self.speed))
+            .format(self.name, location, self.speed))
 
     def damaged(self, damage): # AttackUnit 클래스에서 Unit 클래스로 이동
         print("{0} : {1}만큼 피해를 입었습니다.".format(self.name, damage))
@@ -319,7 +319,7 @@ class AttackUnit(Unit):
     
     def attack(self, location):
         print("{0} : {1} 방향 적군을 공격합니다. [공격력 {2}]" \
-        .format(self.name, location, self.damage))
+            .format(self.name, location, self.damage))
     
     """
     def damaged(self, damage): # Unit 클래스로 이동
@@ -335,7 +335,7 @@ class Soldier(AttackUnit): # AttackUnit 클래스 상속
     def __init__(self):
         AttackUnit.__init__(self, "보병", 40, 5, 1) # 이름, 체력, 공격력, 이동 속도
 
-    # 강화제 : 일정 시간 동안 이동 속도와 공격 속도 증가, 체력 10 감소
+    # 강화제: 일정 시간 동안 이동 속도와 공격 속도 증가, 체력 10 감소
     def booster(self): # 강화제 기능 메서드로 정의
         if self.hp > 10:
             self.hp -= 10 # 체력 10 소모
@@ -417,7 +417,7 @@ class Unit:
     def move(self, location):
         # print("[지상 유닛 이동]") # 출력문 삭제
         print("{0} : {1} 방향으로 이동합니다. [속도 {2}]" \
-        .format(self.name, location, self.speed))
+            .format(self.name, location, self.speed))
 
     def damaged(self, damage): # AttackUnit 클래스에서 Unit 클래스로 이동
         print("{0} : {1}만큼 피해를 입었습니다.".format(self.name, damage))
@@ -434,7 +434,7 @@ class AttackUnit(Unit):
     
     def attack(self, location):
         print("{0} : {1} 방향 적군을 공격합니다. [공격력 {2}]" \
-        .format(self.name, location, self.damage))
+            .format(self.name, location, self.damage))
     
     """
     def damaged(self, damage): # Unit 클래스로 이동
@@ -559,13 +559,13 @@ for unit in attack_units:
 Tank.siege_developed = True
 print("[알림] 탱크의 시지 모드 개발이 완료됐습니다.")
 
-# 공격 모드 준비(보병: 강화제, 탱크: 시지 모드, 전투기: 은폐)
+# 공격 모드 준비(보병: 강화제, 탱크: 시지 모드, 전투기: 은폐 모드)
 for unit in attack_units:
     if isinstance(unit, Soldier): # Soldier 클래스의 인스턴스이면 강화제
         unit.booster()
     elif isinstance(unit, Tank): # Tank 클래스의 인스턴스이면 시지 모드
         unit.set_siege_mode()
-    elif isinstance(unit, Stealth): # Stealth 클래스의 인스턴스이면 은폐
+    elif isinstance(unit, Stealth): # Stealth 클래스의 인스턴스이면 은폐 모드
         unit.cloaking()
 
 # 전군 공격
@@ -597,7 +597,7 @@ class Unit:
 
     def move(self, location):
         print("{0} : {1} 방향으로 이동합니다. [속도 {2}]" \
-        .format(self.name, location, self.speed))
+            .format(self.name, location, self.speed))
 
     def damaged(self, damage):
         print("{0} : {1}만큼 피해를 입었습니다.".format(self.name, damage))
@@ -614,7 +614,7 @@ class AttackUnit(Unit):
 
     def attack(self, location):
         print("{0} : {1} 방향 적군을 공격합니다. [공격력 {2}]" \
-        .format(self.name, location, self.damage))
+            .format(self.name, location, self.damage))
 
 # 보병 유닛
 class Soldier(AttackUnit):
@@ -729,13 +729,13 @@ for unit in attack_units:
 Tank.siege_developed = True
 print("[알림] 탱크의 시지 모드 개발이 완료됐습니다.")
 
-# 공격 모드 준비(보병 : 강화제, 탱크 : 시지 모드, 전투기 : 은폐)
+# 공격 모드 준비(보병: 강화제, 탱크: 시지 모드, 전투기: 은폐 모드)
 for unit in attack_units:
     if isinstance(unit, Soldier): # Soldier 클래스의 인스턴스이면 강화제
         unit.booster()
     elif isinstance(unit, Tank): # Tank 클래스의 인스턴스이면 시지 모드
         unit.set_siege_mode()
-    elif isinstance(unit, Stealth): # Stealth 클래스의 인스턴스이면 은폐
+    elif isinstance(unit, Stealth): # Stealth 클래스의 인스턴스이면 은폐 모드
         unit.cloaking()
 
 # 전군 공격

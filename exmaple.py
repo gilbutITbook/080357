@@ -57,22 +57,29 @@ print("치킨 당첨자 : {0}".format(chicken_winner))
 print("커피 당첨자 : {0}".format(coffee_winners))
 print("-- 축하합니다! --")
 
+#파이썬 버전 3.11 이상일 때
+from random import *
+
+lst = [1, 2, 3, 4, 5]
+# shuffle(lst)
+print(sample(lst, len(lst)))
+
 
 #ch6
 
 from random import * 
 
-cnt = 0 # 총 탑승 승객 수
+cnt = 0 # 총 탑승객 수
 
-for i in range(1, 51): # 승객 총 50명
+for i in range(1, 51): # 손님 총 50명
     time = randrange(5, 51) # 변수 정의 소요시간 5~50분
     if 5 <= time <= 15: # 소요시간 5~15분인 손님만 매칭
         print("[O] {0}번째 손님 (소요시간 : {1}분)".format(i, time)) # 매칭 성공 출력
-        cnt += 1 # 총 탑승 승객 수 증가 처리
+        cnt += 1 # 총 탑승객 수 증가 처리
     else: # 매칭 실패 시
         print("[ ] {0}번째 손님 (소요시간 : {1}분)".format(i, time)) # 매칭 실패 출력
 
-print("총 탑승 승객 : {0}명".format(cnt)) # 총 탑승 승객 수 출력
+print("총 탑승객 : {0}명".format(cnt)) # 총 탑승객 수 출력
 
 
 #ch7
